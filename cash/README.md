@@ -69,4 +69,4 @@ $ node bin/index.js <command>
 
 ## Available Currencies
 
-See [currencies.json]("https://github.com/Sajeevan96/3-musketeers/blob/master/cash/lib/currencies.json") file.
+See [currencies.json](https://github.com/Sajeevan96/3-musketeers/blob/master/cash/lib/currencies.json) file.
