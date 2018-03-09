@@ -2,8 +2,10 @@
 
 Cash is a tool to convert a certain quantity of money of a currency into another one (or into several currencies).
 
-<img align="right" width="650" height="280"
-     title="Cash logo" src="./cover.jpg">
+<p align="right">
+  <img src="./cover.png" 
+       width="650" height="280">
+</p>
 
 Size Limit is a tool to prevent JavaScript libraries bloat.
 With it, you know exactly for how many kilobytes your JS library
