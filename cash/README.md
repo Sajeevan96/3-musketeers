@@ -19,7 +19,7 @@ Cash is a converter tool of currency. You can simultaneously convert into severa
 
 ## How It Works
 
-You can find more examples in **[Size Limit: Make the Web lighter]** article.
+Cash converts Currency Rates directly from your Terminal!
 
 ## Usage
 
