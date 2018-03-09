@@ -2,8 +2,8 @@
 
 Cash is a tool to convert a certain quantity of money of a currency into another one (or into several currencies).
 
-<p align="right">
-  <img src="./cover.png" 
+<p align="center">
+  <img src="./cover.jpg" 
        width="650" height="280">
 </p>
 
