@@ -69,4 +69,37 @@ $ node bin/index.js <command>
 
 ## Available Currencies
 
-See [currencies.json](https://github.com/Sajeevan96/3-musketeers/blob/master/cash/lib/currencies.json) file.
+|ISO  | Name |
+|-----|------|
+ AUD | Australian Dollar 
+RUB|Russian Rouble
+EUR|Euro
+BGN|Bulgarian Lev
+BRL|Real Brazilian
+CAD|Canadian Dollar
+CHF|Swiss Franc
+CNY|Chinese Yuan
+CZK|Czech Koruna
+DKK|Danish Krone
+GBP|Pound Sterling
+HKD|Hong Kong Dollar
+HRK|Croatian Kuna
+HUF|Hungarian Forint
+IDR|Indonesian Rupiah
+ILS|Israeli Shekel
+INR|Indian Rupee
+JPY|Japanes Yen
+KRW|South Korean Won
+MXN|Mexican Peso
+MYR|Malaysian Ringgit
+NOK|Norwegian Krone
+PHP|Philippine Peso
+PLN|Polish Zloty
+RON|Romanian New Leu
+SEK|Swedish Krona
+SGD|Singapore Dollar
+THB|Thai Baht
+TRY|Turkish Lira
+USD|US Dollar
+ZAR|South African Rand
+NZD|New Zealand Dollar
