@@ -8,23 +8,43 @@ const config = new Conf();
 
 updateNotifier({pkg}).notify();
 
+/**
+ * Saving currencies preferences into the file "C:\Users\Username\AppData\Local\cash-nodejs\Config\config.json"
+ */
 const saveCurrencies = argv => {
+  /**
+   * Select between the chosen input currency and default one. 
+   * Default input currency : USD 
+   */
   config.set('defaultFrom', argv[1] || config.get('defaultFrom', 'USD'));
+  /**
+   * Select between the chosen output currencies and the default one.
+   * Default ouput currency : USD, EUR, GBP
+   */
   config.set(
     'defaultTo',
     argv.length > 2
       ? process.argv.slice(4)
       : config.get('defaultTo', ['USD', 'EUR', 'GBP'])
   );
+  /**
+   * Save into the file
+   */
   console.log(chalk.green('Saved default currencies to ' + config.path));
   process.exit(1);
 };
 
+/**
+ * Give the version 
+ */
 const version = () => {
   console.log(pkg.version);
   process.exit(1);
 };
 
+/**
+ * Help details : printed into the command prompt when "node index (--help)" is requested by a user 
+ */
 const help = () => {
   console.log(`
 Usage:
@@ -57,6 +77,9 @@ Examples:
   process.exit(1);
 };
 
+/**
+ * Call one of the 3 services (see above) when requested by a user
+ */
 const helpers = argv => {
   // Version
   if (argv.indexOf('--version') !== - 1 || argv.indexOf('-v') !== - 1) {
