@@ -6,11 +6,15 @@ const Big = require('big.js');
 test('should default to returning then default ifself', () => {
   //convert(2, 'BTC', 'BTC');
   expect(typeof convert(2, 'BTC', 'BTC')).toBe('number');
+  expect(convert(2, 'BTC', 'BTC')).toBe(2);
+
 });
 
 test('should return a number', () => {
   //convert(2, 'BTC', 'BTC', 'Number');
   expect(typeof convert(2, 'BTC', 'BTC','Number')).toBe('number');
+  expect(convert(2, 'BTC', 'BTC','Number')).toBe(2);
+
 });
 
 test('should return a Big number', () => {
@@ -112,4 +116,37 @@ test('should allow untest aliases', () => {
   //convert(4.6, 'μBTC', 'bit');
   expect(convert(4.6, 'Satoshi', 'sat')).toBe(convert(4.6, 'Satoshi', 'Satoshi'));
   expect(convert(4.6, 'BTC', 'μBTC')).toBe(convert(4.6, 'BTC', 'bit'));
+  expect(convert(NaN, 'BTC', 'μBTC')).toBe(convert(NaN, 'BTC', 'bit'));
+
+});
+
+test('should return an array of unit symbols', () => {
+  var array = ['BTC','mBTC','μBTC','bit','Satoshi','sat']
+  expect(convert.units()).toEqual(array); 
+});
+
+test('Should add a new unit for conversion', () => {
+  convert.addUnit('finney', 0.0000001); 
+  var array = ['BTC','mBTC','μBTC','bit','Satoshi','sat','finney']; 
+  expect(convert.units()).toEqual(array); 
+});
+
+test('Should throw when unit already exists with a different factor', () => {
+  expect(() => {
+    convert.addUnit('BTC', 0.0000001);
+  }).toThrow();
+});
+
+test('Should remove the unit from conversion', () => {
+  var array = ['BTC','mBTC','μBTC','bit','Satoshi','sat']
+  convert.addUnit('finney', 0.0000001);
+  convert.removeUnit("finney");
+  convert.removeUnit("noexists");
+  expect(convert.units()).toEqual(array);
+});
+
+test('Should throws when unit is pre-defined', () => { 
+  expect(() => {
+    convert.removeUnit('μBTC');
+  }).toThrow();
 });
